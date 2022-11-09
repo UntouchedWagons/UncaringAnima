@@ -1,0 +1,28 @@
+﻿<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ideology</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Ideogram"]//*[self::altitudeLayer or self::clearBuildingArea or self::isEdifice]</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Ideogram"]</xpath>
+					<value>
+						<clearBuildingArea>false</clearBuildingArea>
+						<altitudeLayer>BuildingOnTop</altitudeLayer>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Ideogram"]/building</xpath>
+					<value>
+						<isEdifice>false</isEdifice>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,41 @@
+﻿<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ideology</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[
+					defName="Pew" or 
+					defName="Lectern" or 
+					defName="KneelSheet" or 
+					defName="KneelPillow" or 
+					defName="Reliquary" or 
+					defName="Ideogram"]/building</xpath>
+					<value>
+						<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[
+					defName="Altar_Small" or 
+					defName="Altar_Medium" or 
+					defName="Altar_Large" or 
+					defName="Altar_Grand" or 
+					defName="Effigy" or 
+					defName="Pyre" or 
+					defName="Burnbong" or 
+					defName="IncenseShrine" or 
+					defName="Drum"]</xpath>
+					<value>
+						<building>
+						<artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+						</building>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
